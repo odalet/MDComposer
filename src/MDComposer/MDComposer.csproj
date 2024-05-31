@@ -15,5 +15,14 @@
     <AssemblyOriginatorKeyFile>..\Common\delta.snk</AssemblyOriginatorKeyFile>
     <ApplicationIcon>..\Common\icon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="9.25.1.91650">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.CommandLine.NamingConventionBinder" Version="2.0.0-beta4.22272.1" />
+    <PackageReference Include="NLog" Version="5.3.2" />
+  </ItemGroup>
   
 </Project>

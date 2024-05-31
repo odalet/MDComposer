@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "MDComposer - preview": {
+      "commandName": "Project",
+      "commandLineArgs": "preview c:\\temp\\foo.md"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}
