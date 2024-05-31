@@ -1,6 +1,6 @@
 # MDComposer
 
-![MDComposer](src/Common/icon.svg)
+![MDComposer](src/common/icon.svg)
 
 _Experiment_: Merges several Markdown documents into one PDF
 
