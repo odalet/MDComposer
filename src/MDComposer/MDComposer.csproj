@@ -13,6 +13,7 @@
     <SignAssembly>true</SignAssembly>
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>..\Common\delta.snk</AssemblyOriginatorKeyFile>
+    <ApplicationIcon>..\Common\icon.ico</ApplicationIcon>
   </PropertyGroup>
   
 </Project>

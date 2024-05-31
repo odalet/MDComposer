@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_common", "_common", "{2BE4
 	ProjectSection(SolutionItems) = preProject
 		..\.editorconfig = ..\.editorconfig
 		common\delta.snk = common\delta.snk
+		Directory.Build.props = Directory.Build.props
+		common\icon.ico = common\icon.ico
+		common\icon.png = common\icon.png
+		common\icon.svg = common\icon.svg
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
