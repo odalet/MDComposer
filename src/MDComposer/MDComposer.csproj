@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Delta.MDComposer</RootNamespace>
+    <StartupObject>Delta.MDComposer.Program</StartupObject>
+    <AssemblyName>md-composer</AssemblyName>
+    <Description>Merges several Markdown documents into one PDF</Description>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile>..\Common\delta.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  
+</Project>

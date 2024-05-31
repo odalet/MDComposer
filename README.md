@@ -1,2 +1,3 @@
 # MDComposer
-Merges several Markdown documents into one PDF
+
+_Experiment_: Merges several Markdown documents into one PDF
