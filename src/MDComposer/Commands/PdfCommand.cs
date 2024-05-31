@@ -3,38 +3,30 @@ using NLog;
 
 namespace Delta.MDComposer.Commands;
 
-internal sealed class PdfCommand(bool verbose, FileInfo? input, FileInfo? output) : BaseCommand(verbose)
+internal sealed class PdfCommand(bool verbose, bool debug, FileInfo? input, FileInfo? output) : BaseCommand(verbose, debug)
 {
     private static readonly Logger log = LogManager.GetCurrentClassLogger();
 
     public static string Name { get; } = "pdf";
 
-    public static int Execute(bool verbose, FileInfo? input, FileInfo? output)
+    public static int Execute(bool verbose, bool debug, FileInfo? input, FileInfo? output)
     {
-        var me = new PdfCommand(verbose, input, output);
+        var me = new PdfCommand(verbose, debug, input, output);
         return me.Run();
     }
 
     private int Run()
     {
-        if (!ValidateArgs()) return -1;
-
-        log.Info($"Generating '{output}' from '{input}'");
-        return 0;
-    }
-
-    private bool ValidateArgs()
-    {
         if (input == null)
         {
             log.Error($"Input file is mandatory. Try {Program.AppName} {Name} -h");
-            return false;
+            return -1;
         }
 
         if (!File.Exists(input.FullName))
         {
             log.Error($"Input file '{input}' does not exist");
-            return false;
+            return -1;
         }
 
         if (output == null)
@@ -44,6 +36,10 @@ internal sealed class PdfCommand(bool verbose, FileInfo? input, FileInfo? output
             log.Info($"Output file will be '{output}'");
         }
 
-        return true;
+        log.Info($"Generating '{output}' from '{input}'");
+
+        PdfDocumentBuilder.Export(input.FullName, output.FullName, DebugMode);
+
+        return 0;
     }
 }

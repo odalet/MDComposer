@@ -16,6 +16,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_common", "_common", "{2BE4
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delta.MDComposer", "Delta.MDComposer\Delta.MDComposer.csproj", "{2EE8A74A-74C4-4A47-9335-C832B6A07A0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestData", "TestData", "{6F2C2119-918C-4017-A608-A4947C197150}"
+	ProjectSection(SolutionItems) = preProject
+		TestData\simple.md = TestData\simple.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QuestPDF.Markdown", "QuestPDF.Markdown", "{3A21C1CD-2C8D-4C2C-9073-2F9BB44A57A1}"
+	ProjectSection(SolutionItems) = preProject
+		TestData\QuestPDF.Markdown\expected.pdf = TestData\QuestPDF.Markdown\expected.pdf
+		TestData\QuestPDF.Markdown\test.md = TestData\QuestPDF.Markdown\test.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +39,16 @@ Global
 		{DEF969BA-3579-4DA1-BCD0-7A03C56CED71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEF969BA-3579-4DA1-BCD0-7A03C56CED71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEF969BA-3579-4DA1-BCD0-7A03C56CED71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EE8A74A-74C4-4A47-9335-C832B6A07A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EE8A74A-74C4-4A47-9335-C832B6A07A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EE8A74A-74C4-4A47-9335-C832B6A07A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EE8A74A-74C4-4A47-9335-C832B6A07A0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3A21C1CD-2C8D-4C2C-9073-2F9BB44A57A1} = {6F2C2119-918C-4017-A608-A4947C197150}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A4D8B99C-673A-4382-B962-F62C3B5D2FC9}

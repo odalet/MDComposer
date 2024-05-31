@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using Delta.MDComposer.Commands;
+using QuestPDF;
+using QuestPDF.Infrastructure;
 
 namespace Delta.MDComposer;
 
@@ -16,6 +18,9 @@ internal static class Program
 
     private static int Main(string[] args)
     {
+        // We are an open source tool!
+        Settings.License = LicenseType.Community;
+
         NLogInitializer.Execute();
         var command = CreateCommands();
         return command.Invoke(args);
@@ -32,7 +37,11 @@ internal static class Program
         pdfCommand.AddArgument(new Argument<FileInfo?>("output", () => null, "Path to the output PDF file (if not specified, the input file name with a .pdf extension will be created)"));
         pdfCommand.Handler = CommandHandler.Create(PdfCommand.Execute);
 
-        var rootCommand = new RootCommand(description: "Combines several Markdown documents into a unique output PDF");
+        var rootCommand = new RootCommand(description: "Combines several Markdown documents into a unique output PDF")
+        {
+            new Option<bool>(["-d", "--debug"], () => false, "Enable Debug mode")
+        };
+
         rootCommand.AddGlobalOption(new Option<bool>(["-v", "--verbose"], "Enable verbose output"));
         rootCommand.AddCommand(previewCommand);
         rootCommand.AddCommand(pdfCommand);
