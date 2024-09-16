@@ -2,11 +2,11 @@
   "profiles": {
     "MDComposer - preview": {
       "commandName": "Project",
-      "commandLineArgs": "preview ../../../../TestData/simple.md"
+      "commandLineArgs": "--verbose preview ../../../../TestData/project.mdcproj"
     },
     "MDComposer - pdf": {
       "commandName": "Project",
-      "commandLineArgs": "pdf ../../../../TestData/simple.md"
+      "commandLineArgs": "--verbose pdf ../../../../TestData/simple.md"
     },
     "WSL": {
       "commandName": "WSL2",

@@ -1,7 +1,10 @@
+using System;
 using System.IO;
 using NLog;
 
 namespace Delta.MDComposer.Commands;
+
+using static CommandUtils;
 
 internal sealed class PreviewCommand(bool verbose, bool debug, FileInfo? input) : BaseCommand(verbose, debug)
 {
@@ -20,19 +23,34 @@ internal sealed class PreviewCommand(bool verbose, bool debug, FileInfo? input) 
         if (input == null)
         {
             log.Error($"Input file is mandatory. Try {Program.AppName} {Name} -h");
-            return -1;
+            return KO;
         }
 
         if (!File.Exists(input.FullName))
         {
             log.Error($"Input file '{input}' does not exist");
-            return -1;
+            return KO;
         }
 
-        log.Info($"Previewing '{input}'");
+        log.Info($"Previewing '{input.FullName}'");
+
+        // TODO
+        try
+        {
+            var project = CreateProject(input);
+            if (project == null)
+            {
+                log.Error("Could not load the project");
+                return KO;
+            }
+        }
+        catch (Exception ex)
+        {
+            log.Error(ex, $"Could not load the project: {ex.Message}");
+            return KO;
+        }
 
         PdfDocumentBuilder.Preview(input.FullName, DebugMode);
-
-        return 0;
+        return OK;
     }
 }

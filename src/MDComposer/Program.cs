@@ -29,7 +29,7 @@ internal static class Program
     private static RootCommand CreateCommands()
     {
         var previewCommand = new Command(PreviewCommand.Name, "Preview the document");
-        previewCommand.AddArgument(new Argument<FileInfo>("input", "Mandatory: Path to the file to preview"));
+        previewCommand.AddArgument(new Argument<FileInfo>("input", "Mandatory: Path to the file to preview (either a .md document or a .mdc project)"));
         previewCommand.Handler = CommandHandler.Create(PreviewCommand.Execute);
 
         var pdfCommand = new Command(PdfCommand.Name, "Generate the final document as a PDF file");

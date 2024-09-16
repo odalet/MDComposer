@@ -1,0 +1,7 @@
+<project>
+  <input>
+    <toc />
+    <markdown file="./chapter1.md" />
+    <markdown file="./chapter2.md" />
+  </input>
+</project>

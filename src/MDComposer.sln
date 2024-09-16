@@ -16,10 +16,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_common", "_common", "{2BE4
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delta.MDComposer", "Delta.MDComposer\Delta.MDComposer.csproj", "{2EE8A74A-74C4-4A47-9335-C832B6A07A0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delta.MDComposer", "Delta.MDComposer\Delta.MDComposer.csproj", "{2EE8A74A-74C4-4A47-9335-C832B6A07A0E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestData", "TestData", "{6F2C2119-918C-4017-A608-A4947C197150}"
 	ProjectSection(SolutionItems) = preProject
+		TestData\chapter1.md = TestData\chapter1.md
+		TestData\chapter2.md = TestData\chapter2.md
+		TestData\project.mdcproj = TestData\project.mdcproj
 		TestData\simple.md = TestData\simple.md
 	EndProjectSection
 EndProject

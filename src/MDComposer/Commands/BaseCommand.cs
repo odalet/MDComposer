@@ -1,3 +1,6 @@
+using System.IO;
+using Delta.MDComposer.ProjectModel;
+
 namespace Delta.MDComposer.Commands;
 
 internal abstract class BaseCommand
